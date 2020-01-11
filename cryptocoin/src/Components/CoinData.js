@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 
 export default class CoinData extends Component{
 
-    componentDidMount(){
+    componentDidMount(){        //sample function to check the coin data
         console.log("Inside CheckData");
         console.log(this.props.dataobj);
     }

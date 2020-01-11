@@ -13,7 +13,7 @@ export default class SearchForm extends Component {
         searchedCoin: {}
     }
 
-    componentDidMount(){
+    componentDidMount(){   //lifecycle method loading the coins list
         axios.get("https://api.coingecko.com/api/v3/coins/list")
             .then(res => {
                 this.setState({
@@ -23,13 +23,13 @@ export default class SearchForm extends Component {
         })
     }
 
-    handleChange = (e) => {
+    handleChange = (e) => {         //handle changes in the input field
         this.setState({
             [e.target.name]: e.target.value
         });
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = (e) => {         //Getting the coin data from API
         e.preventDefault();
         let obj = this.state.coins.data.filter(coin => {
             return coin.name === this.state.currency;
